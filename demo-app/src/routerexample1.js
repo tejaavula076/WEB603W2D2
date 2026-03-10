@@ -1,13 +1,54 @@
 import React from "react";
-import {
-  
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
     <Router>
-      
-     
+      <nav>
+        <ul>
+          <li>
+            <Link to="/" />
+            Home
+          </li>
+          <li>
+            <Link to="/about" />
+            About
+          </li>
+          <li>
+            <Link to="/users" />
+            Users
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </Router>
+  );
+}
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+      <p>This is our Home</p>
+    </div>
+  );
+}
+function About() {
+    return (
+    <div>
+      <h2>About</h2>
+      <p>This is About</p>
+    </div>
+  );
+}
+function Users() {
+    return (
+    <div>
+      <h2>Users</h2>
+      <p>This is User</p>
+    </div>
   );
 }
